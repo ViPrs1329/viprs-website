@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: 'FRC 1329 ViPrs'
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,23 +9,19 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 'Team 1329 - The ViPrs | FIRST Robotics Competition'
+    template: '%s — Team 1329 ViPrs'
+  description: "Official website of FRC Team 1329, The ViPrs from St. Louis, Missouri. Inspiring future STEM leaders through the FIRST Robotics Competition."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 'FRC Team 1329 — The ViPrs'
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
-    cardType: summary_large_image
 
 i18n:
   language: en
