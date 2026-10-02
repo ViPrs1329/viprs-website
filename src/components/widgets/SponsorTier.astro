@@ -1,0 +1,80 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import type { Sponsor } from '~/data/sponsors';
+
+export interface Props {
+  title: string;
+  sponsors: Sponsor[];
+  size: 'lg' | 'md' | 'sm';
+  accent: string;
+  isAfterContent?: boolean;
+}
+
+const { title, sponsors, size, accent, isAfterContent = false } = Astro.props;
+
+const sizes = {
+  lg: { card: 'w-full sm:w-80 h-36', logo: 'max-h-20 max-w-60', text: 'text-2xl', px: 480 },
+  md: { card: 'w-[calc(50%-0.75rem)] sm:w-60 h-28', logo: 'max-h-14 max-w-44', text: 'text-xl', px: 360 },
+  sm: { card: 'w-[calc(50%-0.75rem)] sm:w-44 h-20', logo: 'max-h-10 max-w-32', text: 'text-base', px: 260 },
+}[size];
+
+const logoClass = `w-auto h-auto object-contain ${sizes.logo}`;
+---
+
+<WidgetWrapper containerClass={`max-w-6xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>
+  <div class="flex items-center justify-center gap-3 mb-8">
+    <span class="h-1 w-10 rounded-full" style={`background:${accent}`}></span>
+    <Headline title={title} classes={{ container: 'mb-0 md:mb-0 md:mx-0 max-w-none', title: 'text-2xl md:text-3xl' }} />
+    <span class="h-1 w-10 rounded-full" style={`background:${accent}`}></span>
+  </div>
+  <ul class="flex flex-wrap justify-center gap-6">
+    {
+      sponsors.length ? (
+        sponsors.map(({ name, url, logo, logoDark }) => {
+          const Tag = url ? 'a' : 'div';
+          return (
+            <li class={sizes.card}>
+              <Tag
+                class="flex h-full w-full items-center justify-center rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 transition hover:shadow-md"
+                {...(url ? { href: url, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                style={`border-top: 4px solid ${accent}`}
+              >
+                {logo ? (
+                  <>
+                    <Image
+                      src={logo}
+                      alt={name}
+                      width={sizes.px}
+                      layout="fixed"
+                      class:list={[logoClass, { 'dark:hidden': logoDark }]}
+                    />
+                    {logoDark && (
+                      <Image
+                        src={logoDark}
+                        alt={name}
+                        width={sizes.px}
+                        layout="fixed"
+                        class={`hidden dark:block ${logoClass}`}
+                      />
+                    )}
+                  </>
+                ) : (
+                  <span class={`font-bold text-heading text-center ${sizes.text}`}>{name}</span>
+                )}
+              </Tag>
+            </li>
+          );
+        })
+      ) : (
+        <li class="text-muted italic">
+          Your logo could be here.{' '}
+          <a href="#become-a-sponsor" class="text-primary underline not-italic">
+            Become a sponsor
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</WidgetWrapper>

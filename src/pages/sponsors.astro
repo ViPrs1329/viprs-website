@@ -1,6 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import SponsorTier from '~/components/widgets/SponsorTier.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { gold, silver, bronze } from '~/data/sponsors';
 
 const metadata = {
   title: 'Sponsors',
@@ -8,5 +11,30 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Coming soon" title="Sponsors" subtitle="The companies and families who make our season possible." />
+  <HeroText
+    tagline="Thank you"
+    title="Our Sponsors"
+    subtitle="The ViPrs are made possible by the schools, companies, and families who support us. Their generosity funds our robot, our competitions, and our outreach."
+  />
+
+  <SponsorTier title="Gold" sponsors={gold} size="lg" accent="#D4A017" />
+  <SponsorTier title="Silver" sponsors={silver} size="md" accent="#A8A9AD" isAfterContent />
+  <SponsorTier title="Bronze" sponsors={bronze} size="sm" accent="#B0703A" isAfterContent />
+
+  <CallToAction
+    id="become-a-sponsor"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: 'mailto:prioryvizrobotics@stlprioryschool.org?subject=Sponsoring%20The%20ViPrs',
+      },
+    ]}
+  >
+    <Fragment slot="title">Become a sponsor</Fragment>
+    <Fragment slot="subtitle">
+      Sponsoring The ViPrs helps students build real engineering and business skills. We'd love to talk about how you
+      can get involved.
+    </Fragment>
+  </CallToAction>
 </Layout>

@@ -1,6 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import TeamGrid from '~/components/widgets/TeamGrid.astro';
+import { captains, robotLeads, mtrLeads, mentors } from '~/data/team';
 
 const metadata = {
   title: 'Meet the Team',
@@ -8,5 +10,45 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Coming soon" title="Meet the Team" subtitle="Get to know the students and mentors behind The ViPrs." />
+  <HeroText
+    tagline="The people behind 1329"
+    title="Meet the Team"
+    subtitle="The ViPrs are led by students, with mentors who guide and support them along the way."
+  />
+
+  <!-- Student Leadership ************ -->
+
+  <TeamGrid
+    id="leadership"
+    tagline="Student Leadership"
+    title="Captains"
+    subtitle="Our captains lead the two sides of the team: the robot, and More Than Robots (MTR), which covers everything else that keeps the team running."
+    members={captains}
+  />
+
+  <TeamGrid
+    title="Robot Side"
+    subtitle="Designing, building, wiring, programming, and driving the robot."
+    members={robotLeads}
+    isAfterContent
+  />
+
+  <TeamGrid
+    title="MTR Side"
+    subtitle="More Than Robots: telling our story, sharing STEM with the community, and funding the team."
+    members={mtrLeads}
+    isAfterContent
+  />
+
+  <!-- Mentors *********************** -->
+
+  <TeamGrid
+    id="mentors"
+    tagline="Mentors"
+    title="Our Mentors"
+    subtitle="Volunteers who share their time and experience with our students."
+    members={mentors}
+  >
+    <div slot="bg" class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </TeamGrid>
 </Layout>

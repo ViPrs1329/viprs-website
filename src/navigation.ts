@@ -1,4 +1,4 @@
-import { getPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -25,20 +25,25 @@ export const footerData = {
       links: [
         { text: 'Sign Up', href: getPermalink('/signup') },
         { text: 'Sponsors', href: getPermalink('/sponsors') },
+        { text: 'Email Us', href: 'mailto:prioryvizrobotics@stlprioryschool.org' },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    {
+      text: 'Team Handbook',
+      href: 'https://docs.google.com/document/d/1UfOUVw6jp5nT9yA6pBDy94vnklsgLhi_GdadQkYaWA8/edit?tab=t.0',
+      target: '_blank',
+    },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
+    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/ViPrs1329/ViPrs2026/tree/GRCBOTNOLL' },
   ],
   footNote: `
-    FRC Team 1329 · The ViPrs · St. Louis, Missouri
+    FRC Team 1329 · The ViPrs · St. Louis, Missouri ·
+    <a class="hover:underline" href="mailto:prioryvizrobotics@stlprioryschool.org">prioryvizrobotics@stlprioryschool.org</a>
   `,
 };
