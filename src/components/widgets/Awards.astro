@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import firstIcon from '~/assets/images/events/first-icon.svg';
+import type { Award } from '~/data/awards';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  banners: Award[];
+  awards: Award[];
+}
+
+const { id, title, subtitle, tagline, banners, awards } = Astro.props;
+---
+
+<WidgetWrapper id={id} containerClass="max-w-5xl">
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-16">
+    <ul class="flex flex-wrap justify-center gap-8">
+      {
+        banners.map(({ title: bannerTitle, event, year }) => (
+          <li class="banner w-52">
+            {/* Hanging rod */}
+            <div class="-mx-3 h-2 rounded-full bg-slate-700 dark:bg-slate-500" aria-hidden="true" />
+            <div class="banner-cloth flex flex-col items-center text-center text-white px-5 pt-6 pb-16">
+              <div class="flex h-20 w-28 items-center justify-center rounded-md bg-white p-2 shadow-sm">
+                <img src={firstIcon.src} alt="FIRST" width="96" height="58" class="h-auto w-full" />
+              </div>
+              <p class="mt-5 text-4xl font-extrabold tracking-tight">{year}</p>
+              <p class="mt-2 text-lg font-bold leading-tight">{event}</p>
+              <p class="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/85">{bannerTitle}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="w-full max-w-md divide-y divide-[var(--aw-color-border)] border-y border-[var(--aw-color-border)]">
+      {
+        awards.map(({ title: awardTitle, event, year }) => (
+          <li class="flex items-center gap-4 py-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-crimson-100 text-primary dark:bg-[var(--aw-color-problem-bg)]">
+              <Icon name="tabler:trophy" class="h-5 w-5" />
+            </span>
+            <div>
+              <p class="font-bold text-heading leading-snug">{awardTitle}</p>
+              {event && <p class="text-sm text-muted">{event}</p>}
+            </div>
+            {year && <span class="ml-auto text-sm font-semibold tabular-nums text-muted">{year}</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</WidgetWrapper>
+
+<style>
+  /* FIRST blue banner with a swallowtail bottom, like the ones hung at events */
+  .banner-cloth {
+    background: linear-gradient(to bottom, #1c63b7, #154f95);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 2.5rem), 0 100%);
+  }
+
+  /* On the parent so the shadow follows the swallowtail instead of being clipped */
+  .banner {
+    filter: drop-shadow(0 10px 12px rgb(17 23 26 / 25%));
+  }
+</style>
