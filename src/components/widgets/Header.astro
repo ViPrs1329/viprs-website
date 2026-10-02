@@ -37,7 +37,6 @@ const {
   links = [],
   actions = [],
   isSticky = false,
-  isDark = false,
   isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
@@ -49,8 +48,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 <header
   class:list={[
-    { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    { sticky: isSticky, relative: !isSticky },
+    // Always dark-scoped: the nav bar is Slate/near-black in both themes, so it needs light text
+    'dark top-0 z-40 flex-none mx-auto w-full transition-[opacity] ease-in-out',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
@@ -97,7 +97,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a

@@ -37,9 +37,9 @@ export const footerData = {
     },
   ],
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/viprs1329/' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/viprs1329' },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/ViPrs1329/ViPrs2026/tree/GRCBOTNOLL' },
   ],
   footNote: `

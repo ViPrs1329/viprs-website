@@ -20,25 +20,48 @@ import '@fontsource-variable/inter';
 ---
 
 <style is:inline>
+  /* ViPrs brand colors — logo: Slate #39474F, Steel #AAB2B8, Crimson #D7143C */
   :root {
     --aw-font-sans: 'Inter Variable';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: #d7143c;
+    --aw-color-secondary: #c01236;
+    --aw-color-accent: #d7143c;
+    --aw-color-link: #a80f2f;
 
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-text-heading: #1f272c;
+    --aw-color-text-default: #1f272c;
+    --aw-color-text-muted: #4d5d66;
+    --aw-color-text-faint: #66767f;
+    --aw-color-bg-page: #f4f6f7;
+    --aw-color-bg-card: #ffffff;
+    --aw-color-bg-panel: #e7ebed;
+    --aw-color-border: #cfd5d9;
+    --aw-color-bg-nav: #39474f;
+    --aw-color-nav-stripe: #d7143c;
 
-    --aw-color-bg-page-dark: rgb(3 6 32);
+    --aw-color-bg-page-dark: #161c20;
+
+    --aw-color-good: #1f7a4d;
+    --aw-color-good-bg: #dff3e8;
+    --aw-color-warning: #8a5a00;
+    --aw-color-warning-bg: #fbefd5;
+    --aw-color-problem: #a80f2f;
+    --aw-color-problem-bg: #fbe3e8;
+    --aw-color-focus: #2f6fdb;
 
     ::selection {
-      background-color: lavender;
+      background-color: #fbe3e8;
+      color: #1f272c;
     }
+  }
+
+  /* Nav colors follow the page theme only; the header itself is always dark-scoped */
+  :root.dark {
+    --aw-color-bg-nav: #11171a;
+    --aw-color-nav-stripe: #ef3d62;
   }
 
   .dark {
@@ -46,18 +69,33 @@ import '@fontsource-variable/inter';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: #ef3d62;
+    --aw-color-secondary: #f25a7a;
+    --aw-color-accent: #ef3d62;
+    --aw-color-link: #ff8fa6;
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(3 6 32);
+    --aw-color-text-heading: #eef1f3;
+    --aw-color-text-default: #eef1f3;
+    --aw-color-text-muted: #b9c1c6;
+    --aw-color-text-faint: #8e979d;
+    --aw-color-bg-page: #161c20;
+    --aw-color-bg-card: #1f272c;
+    --aw-color-bg-panel: #2b363c;
+    --aw-color-border: #39474f;
+
+    --aw-color-bg-page-dark: #161c20;
+
+    --aw-color-good: #6fd3a0;
+    --aw-color-good-bg: #17352a;
+    --aw-color-warning: #f0c065;
+    --aw-color-warning-bg: #3a2f16;
+    --aw-color-problem: #ff8fa6;
+    --aw-color-problem-bg: #3d1a22;
+    --aw-color-focus: #7aa7ff;
 
     ::selection {
-      background-color: black;
-      color: snow;
+      background-color: #3d1a22;
+      color: #eef1f3;
     }
   }
 </style>
