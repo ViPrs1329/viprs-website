@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import SignupForm from '~/components/widgets/SignupForm.astro';
 
 const metadata = {
   title: 'Sign Up',
@@ -8,5 +9,11 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Coming soon" title="Sign Up" subtitle="Interested in joining The ViPrs? Sign up here." />
+  <HeroText
+    tagline="Join the team"
+    title="Sign Up"
+    subtitle="Want to join The ViPrs as a student or mentor? Fill out the form below and we'll reach out with next steps. No experience needed."
+  />
+
+  <SignupForm id="signup" />
 </Layout>

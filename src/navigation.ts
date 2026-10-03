@@ -1,4 +1,5 @@
 import { getPermalink } from './utils/permalinks';
+import { TEAM_EMAIL } from './data/contact';
 
 export const headerData = {
   links: [
@@ -27,7 +28,7 @@ export const footerData = {
       links: [
         { text: 'Sign Up', href: getPermalink('/signup') },
         { text: 'Sponsors', href: getPermalink('/sponsors') },
-        { text: 'Email Us', href: 'mailto:prioryvizrobotics@stlprioryschool.org' },
+        { text: 'Email Us', href: `mailto:${TEAM_EMAIL}` },
       ],
     },
   ],
@@ -42,10 +43,14 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/viprs1329/' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/viprs1329' },
-    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/ViPrs1329/ViPrs2026/tree/GRCBOTNOLL' },
+    {
+      ariaLabel: 'GitHub',
+      icon: 'tabler:brand-github',
+      href: 'https://github.com/ViPrs1329/ViPrs2026/tree/GRCBOTNOLL',
+    },
   ],
   footNote: `
     FRC Team 1329 · The ViPrs · St. Louis, Missouri ·
-    <a class="hover:underline" href="mailto:prioryvizrobotics@stlprioryschool.org">prioryvizrobotics@stlprioryschool.org</a>
+    <a class="hover:underline" href="mailto:${TEAM_EMAIL}">${TEAM_EMAIL}</a>
   `,
 };

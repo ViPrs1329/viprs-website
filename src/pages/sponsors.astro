@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import SponsorTier from '~/components/widgets/SponsorTier.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { gold, silver, bronze } from '~/data/sponsors';
+import { TEAM_EMAIL } from '~/data/contact';
 
 const metadata = {
   title: 'Sponsors',
@@ -27,7 +28,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Contact Us',
-        href: 'mailto:prioryvizrobotics@stlprioryschool.org?subject=Sponsoring%20The%20ViPrs',
+        href: `mailto:${TEAM_EMAIL}?subject=Sponsoring%20The%20ViPrs`,
       },
     ]}
   >

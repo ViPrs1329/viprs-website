@@ -39,7 +39,10 @@ const photos = import.meta.glob<{ default: ImageMetadata }>(
 
 export const robots: Robot[] = Object.entries(photos)
   .map(([path, mod]) => {
-    const file = path.split('/').pop()!.replace(/\.[^.]+$/, '');
+    const file = path
+      .split('/')
+      .pop()!
+      .replace(/\.[^.]+$/, '');
     const [, year, rawName] = file.match(/^(\d{4})-?(.*)$/) ?? [];
     const name = rawName?.replace(/[-_]+/g, ' ').trim();
     return {
