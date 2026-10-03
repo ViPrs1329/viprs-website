@@ -61,6 +61,11 @@ export const adaptOpenGraphImages = async (
       const resolved = await findImage(image.url);
       if (!resolved) return { url: '' };
 
+      // Images in public/ ("/…") or on another site are used as-is, so their URL never changes.
+      if (typeof resolved === 'string') {
+        return { url: String(new URL(resolved, astroSite)), width: image.width, height: image.height };
+      }
+
       // Generate an optimized JPG via Astro's image service (Sharp by default).
       const optimized = await getImage({
         src: resolved,

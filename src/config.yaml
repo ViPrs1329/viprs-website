@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: 'FRC Team 1329 — The ViPrs'
     images:
-      - url: '~/assets/images/brand/ViPrs-Social.png'
+      - url: '/ViPrs-Social.png'
         width: 1200
         height: 630
     type: website
