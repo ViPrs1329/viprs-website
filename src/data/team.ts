@@ -33,7 +33,7 @@ export const robotLeads: TeamMember[] = [
 ];
 
 export const mtrLeads: TeamMember[] = [
-  { role: 'Marketing', image: lead('Marketing.png') },
+  { name: 'Natalie Schmidt', role: 'Marketing', image: lead('Natalie-Schmidt.png') },
   { role: 'Graphic Design', image: lead('Graphic-Design.png') },
   { role: 'Outreach', image: lead('Outreach.png') },
   { role: 'Fundraising', image: lead('Fundraising.png') },

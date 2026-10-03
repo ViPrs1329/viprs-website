@@ -1,6 +1,6 @@
 site:
   name: 'FRC 1329 ViPrs'
-  site: 'https://astrowind.vercel.app'
+  site: 'https://viprs-website.netlify.app'
   base: '/'
   trailingSlash: false
 
@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: 'FRC Team 1329 — The ViPrs'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/brand/ViPrs-Social.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
 
 i18n:
