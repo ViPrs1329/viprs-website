@@ -1,0 +1,20 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import RobotGrid from '~/components/widgets/RobotGrid.astro';
+import { robots } from '~/data/robots';
+
+const metadata = {
+  title: 'Our Robots',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Built by 1329"
+    title="Our Robots"
+    subtitle="Every season brings a new challenge and a new robot. Here's everything we've built, from newest to oldest."
+  />
+
+  <RobotGrid robots={robots} />
+</Layout>

@@ -1,0 +1,46 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import type { Robot } from '~/data/robots';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  robots: Robot[];
+}
+
+const { id, title, subtitle, tagline, robots } = Astro.props;
+---
+
+<WidgetWrapper id={id} containerClass="max-w-6xl">
+  <Fragment slot="bg"><slot name="bg" /></Fragment>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={{ title: 'text-2xl md:text-3xl' }} />
+  <ul class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      robots.map(({ year, name, game, image }) => (
+        <li class="flex flex-col overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-gray-200 dark:ring-slate-800">
+          <div class="aspect-[4/3] bg-gray-100 dark:bg-slate-800">
+            <Image
+              src={image}
+              alt={name ? `${name}, the ${year} ViPrs robot` : `The ${year} ViPrs robot`}
+              layout="responsive"
+              width={800}
+              height={600}
+              widths={[400, 800]}
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 352px"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="p-4 text-center">
+            <p class="text-primary dark:text-link font-bold text-sm tracking-wide">{year}</p>
+            <p class="font-bold text-heading text-xl leading-tight">{name ?? game ?? `${year} Robot`}</p>
+            {name && game && <p class="text-muted text-sm">{game}</p>}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</WidgetWrapper>

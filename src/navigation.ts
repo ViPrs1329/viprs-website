@@ -4,6 +4,7 @@ export const headerData = {
   links: [
     { text: 'Home', href: getPermalink('/') },
     { text: 'Meet the Team', href: getPermalink('/team') },
+    { text: 'Robots', href: getPermalink('/robots') },
     { text: 'Sponsors', href: getPermalink('/sponsors') },
     { text: 'Outreach', href: getPermalink('/outreach') },
   ],
@@ -17,6 +18,7 @@ export const footerData = {
       links: [
         { text: 'Home', href: getPermalink('/') },
         { text: 'Meet the Team', href: getPermalink('/team') },
+        { text: 'Robots', href: getPermalink('/robots') },
         { text: 'Outreach', href: getPermalink('/outreach') },
       ],
     },
