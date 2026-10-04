@@ -15,12 +15,13 @@ export interface Props {
 const { title, sponsors, size, accent, isAfterContent = false } = Astro.props;
 
 const sizes = {
-  lg: { card: 'w-full sm:w-80 h-36', logo: 'max-h-20 max-w-60', text: 'text-2xl', px: 480 },
-  md: { card: 'w-[calc(50%-0.75rem)] sm:w-60 h-28', logo: 'max-h-14 max-w-44', text: 'text-xl', px: 360 },
-  sm: { card: 'w-[calc(50%-0.75rem)] sm:w-44 h-20', logo: 'max-h-10 max-w-32', text: 'text-base', px: 260 },
+  lg: { card: 'w-full sm:w-80 h-44', logo: 'max-h-32 max-w-60', text: 'text-2xl', px: 480 },
+  md: { card: 'w-[calc(50%-0.75rem)] sm:w-60 h-36', logo: 'max-h-24 max-w-44', text: 'text-xl', px: 360 },
+  sm: { card: 'w-[calc(50%-0.75rem)] sm:w-44 h-28', logo: 'max-h-16 max-w-32', text: 'text-base', px: 260 },
 }[size];
 
-const logoClass = `w-auto h-auto object-contain ${sizes.logo}`;
+// `!` overrides the Image component's inline object-fit:cover/object-position, which crop and left-align non-wide logos.
+const logoClass = `w-auto h-auto object-contain! object-center! ${sizes.logo}`;
 ---
 
 <WidgetWrapper containerClass={`max-w-6xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>

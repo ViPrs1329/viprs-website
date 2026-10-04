@@ -20,6 +20,17 @@ export const gold: Sponsor[] = [
     logo: logo('Priory-logo-black.svg'),
     logoDark: logo('Priory-logo-white.svg'),
   },
+  {
+    name: 'Visitation Academy',
+    url: 'https://www.visitationacademy.org',
+    logo: logo('Viz-logo-black.svg'),
+    logoDark: logo('Viz-logo-white.svg'),
+  },
+  {
+    name: 'The Whitfield School',
+    url: 'https://www.whitfieldschool.org',
+    logo: logo('Whitfield-logo.svg'),
+  },
 ];
 
 export const silver: Sponsor[] = [];
