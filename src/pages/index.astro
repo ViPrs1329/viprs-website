@@ -7,6 +7,7 @@ import Awards from '~/components/widgets/Awards.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
 import { banners, awards } from '~/data/awards';
 
 const metadata = {
@@ -83,20 +84,31 @@ const metadata = {
 
   <!-- Mission *********************** -->
 
-  <WidgetWrapper id="mission" containerClass="max-w-4xl">
+  <WidgetWrapper id="mission" containerClass="max-w-6xl">
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-band"></div>
     </Fragment>
     <Headline tagline="What drives us" title="Our Mission" classes={{ container: 'mb-6 md:mb-8' }} />
-    <blockquote
-      class="text-lg md:text-xl leading-relaxed text-center text-muted dark:text-slate-300 border-l-4 border-primary pl-6 text-left md:text-center md:border-l-0 md:pl-0"
-    >
-      “Our mission is to cultivate interest, understanding, and skill in the fields of science, technology, engineering,
-      art, and business. We seek to encourage the creativity of thought, perseverance in the face of obstacles, and
-      cooperation and compromise as individuals who are part of a team. We seek to develop life skills in students
-      through team membership, critical thinking, and unique experiences. We operate as a small business and encourage
-      full participation of all students in every aspect of the team.”
-    </blockquote>
+    <div class="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
+      <Image
+        src="~/assets/images/events/Competition-Pit.JPG"
+        alt="ViPrs students and a mentor working on the robot in the team's competition pit"
+        width={1920}
+        height={1280}
+        widths={[400, 768, 1024]}
+        sizes="(max-width: 767px) 100vw, 560px"
+        class="w-full h-auto rounded-lg shadow-lg"
+      />
+      <blockquote
+        class="text-lg md:text-xl leading-relaxed text-muted dark:text-slate-300 border-l-4 border-primary pl-6"
+      >
+        “Our mission is to cultivate interest, understanding, and skill in the fields of science, technology,
+        engineering, art, and business. We seek to encourage the creativity of thought, perseverance in the face of
+        obstacles, and cooperation and compromise as individuals who are part of a team. We seek to develop life skills
+        in students through team membership, critical thinking, and unique experiences. We operate as a small business
+        and encourage full participation of all students in every aspect of the team.”
+      </blockquote>
+    </div>
   </WidgetWrapper>
 
   <!-- CallToAction Widget *********** -->
