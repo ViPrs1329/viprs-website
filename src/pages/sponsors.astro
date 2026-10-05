@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import SponsorTier from '~/components/widgets/SponsorTier.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import { gold, silver, bronze } from '~/data/sponsors';
+import { gold, silver, bronze, inKind } from '~/data/sponsors';
 import { TEAM_EMAIL } from '~/data/contact';
 
 const metadata = {
@@ -21,6 +21,7 @@ const metadata = {
   <SponsorTier title="Gold" sponsors={gold} size="lg" accent="#D4A017" />
   <SponsorTier title="Silver" sponsors={silver} size="md" accent="#A8A9AD" isAfterContent />
   <SponsorTier title="Bronze" sponsors={bronze} size="sm" accent="#B0703A" isAfterContent />
+  <SponsorTier title="In-Kind" sponsors={inKind} size="md" accent="#3B82F6" isAfterContent />
 
   <CallToAction
     id="become-a-sponsor"

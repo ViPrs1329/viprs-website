@@ -2,6 +2,7 @@
 // Logos live in src/assets/images/sponsors/.
 //   logo     – shown in light mode (and in dark mode if there's no logoDark)
 //   logoDark – optional light-colored version shown in dark mode
+//   showName – show the name under the logo, for logos that don't include it
 // A sponsor without a logo yet is shown as its name in text.
 
 export interface Sponsor {
@@ -9,6 +10,7 @@ export interface Sponsor {
   url?: string;
   logo?: string;
   logoDark?: string;
+  showName?: boolean;
 }
 
 const logo = (file: string) => `~/assets/images/sponsors/${file}`;
@@ -36,3 +38,20 @@ export const gold: Sponsor[] = [
 export const silver: Sponsor[] = [];
 
 export const bronze: Sponsor[] = [];
+
+// Companies that donate products or services (software, parts, etc.) instead of money.
+export const inKind: Sponsor[] = [
+  {
+    name: 'Onshape',
+    url: 'https://www.onshape.com',
+    logo: logo('onshape-black.svg'),
+    logoDark: logo('onshape-white.svg'),
+    showName: true,
+  },
+  {
+    name: 'Autodesk Fusion',
+    url: 'https://www.autodesk.com/products/fusion-360',
+    logo: logo('Autodesk-Fusion-Logo.svg'),
+    showName: true,
+  },
+];

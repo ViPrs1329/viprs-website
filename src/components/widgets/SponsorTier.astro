@@ -14,14 +14,37 @@ export interface Props {
 
 const { title, sponsors, size, accent, isAfterContent = false } = Astro.props;
 
+// logoH is the logo's max height; captionLogoH is used instead when a name caption sits under the logo.
 const sizes = {
-  lg: { card: 'w-full sm:w-80 h-44', logo: 'max-h-32 max-w-60', text: 'text-2xl', px: 480 },
-  md: { card: 'w-[calc(50%-0.75rem)] sm:w-60 h-36', logo: 'max-h-24 max-w-44', text: 'text-xl', px: 360 },
-  sm: { card: 'w-[calc(50%-0.75rem)] sm:w-44 h-28', logo: 'max-h-16 max-w-32', text: 'text-base', px: 260 },
+  lg: {
+    card: 'w-full sm:w-80 h-44',
+    logoW: 'max-w-60',
+    logoH: 'max-h-32',
+    captionLogoH: 'max-h-28',
+    text: 'text-2xl',
+    px: 480,
+  },
+  md: {
+    card: 'w-[calc(50%-0.75rem)] sm:w-60 h-36',
+    logoW: 'max-w-44',
+    logoH: 'max-h-24',
+    captionLogoH: 'max-h-20',
+    text: 'text-xl',
+    px: 360,
+  },
+  sm: {
+    card: 'w-[calc(50%-0.75rem)] sm:w-44 h-28',
+    logoW: 'max-w-32',
+    logoH: 'max-h-16',
+    captionLogoH: 'max-h-12',
+    text: 'text-base',
+    px: 260,
+  },
 }[size];
 
 // `!` overrides the Image component's inline object-fit:cover/object-position, which crop and left-align non-wide logos.
-const logoClass = `w-auto h-auto object-contain! object-center! ${sizes.logo}`;
+const logoClass = (showName?: boolean) =>
+  `w-auto h-auto object-contain! object-center! ${sizes.logoW} ${showName ? sizes.captionLogoH : sizes.logoH}`;
 ---
 
 <WidgetWrapper containerClass={`max-w-6xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>
@@ -33,12 +56,15 @@ const logoClass = `w-auto h-auto object-contain! object-center! ${sizes.logo}`;
   <ul class="flex flex-wrap justify-center gap-6">
     {
       sponsors.length ? (
-        sponsors.map(({ name, url, logo, logoDark }) => {
+        sponsors.map(({ name, url, logo, logoDark, showName }) => {
+          const imgClass = logoClass(showName);
+          // A visible caption already names the sponsor, so screen readers skip the logo.
+          const alt = showName ? '' : name;
           const Tag = url ? 'a' : 'div';
           return (
             <li class={sizes.card}>
               <Tag
-                class="flex h-full w-full items-center justify-center rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 transition hover:shadow-md"
+                class="flex flex-col gap-2 h-full w-full items-center justify-center rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 transition hover:shadow-md"
                 {...(url ? { href: url, target: '_blank', rel: 'noopener noreferrer' } : {})}
                 style={`border-top: 4px solid ${accent}`}
               >
@@ -46,20 +72,21 @@ const logoClass = `w-auto h-auto object-contain! object-center! ${sizes.logo}`;
                   <>
                     <Image
                       src={logo}
-                      alt={name}
+                      alt={alt}
                       width={sizes.px}
                       layout="fixed"
-                      class:list={[logoClass, { 'dark:hidden': logoDark }]}
+                      class:list={[imgClass, { 'dark:hidden': logoDark }]}
                     />
                     {logoDark && (
                       <Image
                         src={logoDark}
-                        alt={name}
+                        alt={alt}
                         width={sizes.px}
                         layout="fixed"
-                        class={`hidden dark:block ${logoClass}`}
+                        class={`hidden dark:block ${imgClass}`}
                       />
                     )}
+                    {showName && <span class="text-sm font-semibold text-heading">{name}</span>}
                   </>
                 ) : (
                   <span class={`font-bold text-heading text-center ${sizes.text}`}>{name}</span>
