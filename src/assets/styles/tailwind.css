@@ -118,6 +118,12 @@
   mask-image: radial-gradient(ellipse 70% 75% at 50% 30%, #000 30%, transparent 100%);
 }
 
+/* Faint 45° hazard-style stripes for the footer, using the blueprint grid's line color and fading in from the top */
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(-45deg, var(--aw-color-grid-major) 0 1px, transparent 1px 14px);
+  mask-image: linear-gradient(to bottom, transparent, #000 60%);
+}
+
 @utility bg-hero-glow {
   background-image: radial-gradient(36rem 14rem at 50% 13rem, var(--aw-color-glow), transparent 70%);
 }
