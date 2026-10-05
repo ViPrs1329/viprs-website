@@ -16,6 +16,7 @@ import type { AstroIntegration } from 'astro';
 import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
+import { isHiddenPage } from './src/utils/hiddenPages';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -27,7 +28,10 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
-    sitemap(),
+    sitemap({
+      // Leave unused template pages out of the sitemap (see src/utils/hiddenPages.ts).
+      filter: (page) => !isHiddenPage(new URL(page).pathname),
+    }),
     mdx(),
     icon({
       include: {

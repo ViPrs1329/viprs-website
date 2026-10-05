@@ -38,6 +38,7 @@ export const footerData = {
       href: 'https://docs.google.com/document/d/1UfOUVw6jp5nT9yA6pBDy94vnklsgLhi_GdadQkYaWA8/edit?tab=t.0',
       target: '_blank',
     },
+    { text: 'Privacy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/viprs1329/' },
@@ -46,7 +47,7 @@ export const footerData = {
     {
       ariaLabel: 'GitHub',
       icon: 'tabler:brand-github',
-      href: 'https://github.com/ViPrs1329/ViPrs2026/tree/GRCBOTNOLL',
+      href: 'https://github.com/ViPrs1329',
     },
   ],
   footNote: `

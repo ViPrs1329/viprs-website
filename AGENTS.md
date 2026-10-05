@@ -22,3 +22,7 @@ Consult these guides before working on related tasks:
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
 
 FYI, this project is based off of the AstroWind template.
+
+## Hidden template pages
+
+Unused AstroWind pages (pricing, services, landing pages, demo blog posts, etc.) are kept as a starting point for a future team store but hidden from search engines. The list lives in `src/utils/hiddenPages.ts`, along with steps for making a page public again.
