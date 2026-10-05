@@ -35,9 +35,22 @@ export const gold: Sponsor[] = [
   },
 ];
 
-export const silver: Sponsor[] = [];
+export const silver: Sponsor[] = [
+  {
+    name: 'Boeing',
+    url: 'https://www.boeing.com',
+    logo: logo('Boeing-logo.svg'),
+    logoDark: logo('Boeing-logo-white.svg'),
+  },
+];
 
-export const bronze: Sponsor[] = [];
+export const bronze: Sponsor[] = [
+  {
+    name: 'Nidec',
+    url: 'https://www.nidec.com',
+    logo: logo('Nidec-logo.svg'),
+  },
+];
 
 // Companies that donate products or services (software, parts, etc.) instead of money.
 export const inKind: Sponsor[] = [
