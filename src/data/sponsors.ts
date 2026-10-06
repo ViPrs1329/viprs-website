@@ -67,4 +67,10 @@ export const inKind: Sponsor[] = [
     logo: logo('Autodesk-Fusion-Logo.svg'),
     showName: true,
   },
+  {
+    name: 'Bastian Solutions',
+    url: 'https://www.bastiansolutions.com',
+    logo: logo('bastian-solutions-logo.svg'),
+    logoDark: logo('bastian-solutions-logo-white.svg'),
+  },
 ];

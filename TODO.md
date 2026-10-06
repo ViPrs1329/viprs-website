@@ -44,3 +44,4 @@ Check items off (`- [x]`) as they're done, and move them to **Done** with the da
 - [x] Added a competition pit photo to the home page Mission section (Oct 2026)
 - [x] Added an In-Kind section to the Sponsors page with Onshape and Autodesk Fusion (Oct 2026)
 - [x] Added Boeing (Silver) and Nidec (Bronze) to the Sponsors page (Oct 2026)
+- [x] Added Bastian Solutions to the In-Kind section (Oct 2026)
