@@ -3,7 +3,10 @@ import { SITE } from 'astrowind:config';
 import logo from '~/assets/images/brand/ViPrs-Logo.svg';
 ---
 
-<img src={logo.src} alt="" width="45" height="40" class="h-10 w-auto self-center" />
+<!-- White circle behind the logo so the gray snake stands out against the navbar -->
+<span class="flex size-11 shrink-0 items-center justify-center self-center rounded-full bg-white p-0.5 shadow-sm">
+  <img src={logo.src} alt="" width="45" height="40" class="h-auto w-full" />
+</span>
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >

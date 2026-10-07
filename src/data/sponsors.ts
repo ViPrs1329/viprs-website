@@ -42,6 +42,12 @@ export const silver: Sponsor[] = [
     logo: logo('Boeing-logo.svg'),
     logoDark: logo('Boeing-logo-white.svg'),
   },
+  {
+    name: 'Haskell',
+    url: 'https://www.haskell.com',
+    logo: logo('Haskell-logo.svg'),
+    logoDark: logo('Haskell-logo-white.svg'),
+  },
 ];
 
 export const bronze: Sponsor[] = [
