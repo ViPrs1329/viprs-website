@@ -1,6 +1,6 @@
 // Team contact email, used in the footer and on the Sponsors page.
 // Change it here to update it everywhere on the site.
-export const TEAM_EMAIL = 'dward@priory.org';
+export const TEAM_EMAIL = 'viprs@priory.org';
 
 // Web3Forms access key for the Sign Up form (src/pages/signup.astro).
 // Submissions are emailed to whichever address the key was created with,
