@@ -7,8 +7,9 @@ import logo from '~/assets/images/brand/ViPrs-Logo.svg';
 <span class="flex size-11 shrink-0 items-center justify-center self-center rounded-full bg-white p-0.5 shadow-sm">
   <img src={logo.src} alt="" width="45" height="40" class="h-auto w-full" />
 </span>
+<!-- mb-[0.3em]: Nasalization sits low in its line box, so this nudges it up to line up with the logo circle -->
 <span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+  class="self-center ml-2 mb-[0.3em] rtl:ml-0 rtl:mr-2 font-heading text-2xl md:text-xl text-gray-900 whitespace-nowrap dark:text-white"
 >
   {SITE?.name}
 </span>

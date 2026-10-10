@@ -13,6 +13,7 @@ Check items off (`- [x]`) as they're done, and move them to **Done** with the da
 ## When we move to viprs.org
 
 - [ ] Update `site:` in `src/config.yaml` (the sitemap line in `robots.txt` updates from this automatically)
+- [ ] Add the new domain to the Adobe Fonts web project (kit `oby5yzu`) so the heading font loads there
 - [ ] Set up Google Search Console for the new domain and update `googleSiteVerificationId` in `src/config.yaml`
 - [ ] If the team email changes, update `TEAM_EMAIL` and create a new Web3Forms key with the new address (`src/data/contact.ts`)
 
@@ -48,3 +49,4 @@ Check items off (`- [x]`) as they're done, and move them to **Done** with the da
 - [x] Added donation ranges under the Gold, Silver, and Bronze tier titles (Oct 2026)
 - [x] Added Haskell as a Silver sponsor (Oct 2026)
 - [x] Put the navbar logo in a white circle (Oct 2026)
+- [x] Switched headings to the Nasalization font via Adobe Fonts, and fixed the site fonts so Inter actually loads (Oct 2026)
