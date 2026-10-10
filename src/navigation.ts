@@ -9,7 +9,10 @@ export const headerData = {
     { text: 'Sponsors', href: getPermalink('/sponsors') },
     { text: 'Outreach', href: getPermalink('/outreach') },
   ],
-  actions: [{ text: 'Sign Up', href: getPermalink('/signup') }],
+  actions: [
+    { text: 'VTOS', href: 'https://vtos.priory.org', target: '_blank', variant: 'primary' },
+    { text: 'Sign Up', href: getPermalink('/signup') },
+  ],
 };
 
 export const footerData = {
