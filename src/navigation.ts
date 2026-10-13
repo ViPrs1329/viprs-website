@@ -10,7 +10,7 @@ export const headerData = {
     { text: 'Outreach', href: getPermalink('/outreach') },
   ],
   actions: [
-    { text: 'VTOS', href: 'https://vtos.priory.org', target: '_blank', variant: 'primary' },
+    { text: 'VTOS', href: 'https://viprs.priory.org', target: '_blank', variant: 'primary' },
     { text: 'Sign Up', href: getPermalink('/signup') },
   ],
 };
