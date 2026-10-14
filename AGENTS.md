@@ -1,3 +1,13 @@
+## Branching & deploys
+
+Netlify deploys the site whenever `main` changes, and each production deploy costs money. To keep deploys to a minimum:
+
+- **Never commit or push directly to `main`.**
+- Do each piece of work on its own feature branch.
+- Merge finished feature branches into the long-lived `staging` branch, not `main`.
+- When `staging` has collected enough changes, open one pull request from `staging` to `main`. Merging it is a single production deploy.
+- Don't open pull requests that target `main` unless a maintainer asks for the `staging` → `main` release.
+
 ## Development
 
 When starting the dev server, use background mode:

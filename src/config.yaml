@@ -1,6 +1,6 @@
 site:
   name: 'FRC 1329 ViPrs'
-  site: 'https://viprs1329.netlify.app'
+  site: 'https://viprs.org'
   base: '/'
   trailingSlash: false
 
